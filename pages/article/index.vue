@@ -1,16 +1,6 @@
 <template>
     <section v-if="isError">
-        <div class="text-center pt-16">
-            <div class="text-9xl">
-                <nuxt-icon name="magnifier"/>
-            </div>
-            <p class="text-2xl pt-6 pb-2 font-bold">Valami hiba történt!</p>
-            <p class="text-lg">Kérjük győzödj meg róla, hogy az internetkapcsolattal minden rendben van-e.</p>
-            <button class="text-white text-xl bg-[#E9291B] p-3 border rounded-2xl mt-16 tracking-widest" @click="refreshPage()">
-                <nuxt-icon  name="reload"/>
-                <span>Újratöltés</span>
-            </button>
-        </div>
+        <ErrorWithReload />
     </section>
     <section v-else>
         <div class="row pt-16 pb-8 pl-4 font-bold text-5xl">Legfrisebb cikkeink</div>
@@ -23,7 +13,8 @@
 </template>
 
 <script setup>
-import ArticleCard from '../../components/ArticleCard.vue';
+import ArticleCard from '~/components/ArticleCard.vue';
+import ErrorWithReload from '~/components/ErrorWithReload.vue';
 import { ref } from 'vue';
 
 let isError = ref(false);
@@ -31,10 +22,6 @@ let articles = ref([]);
 let articlePage = 1;
 const pageSize = 10;
 let maxPageCount = 0;
-
-const refreshPage = () => {
-    window.location.reload()
-};
 
 onMounted(() => {
     const fetchArticles = () => {
