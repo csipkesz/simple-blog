@@ -13,12 +13,12 @@
                 <ul
                     class="
                     pt-4
-                    text-base text-gray-700
+                    text-base text-black
                     lg:flex
                     lg:justify-between 
                     lg:pt-0"
                 >
-                    <li v-for="menuPoint in menuPoints" class="lg:p-4 py-2 block text-xl hover:font-bold">
+                    <li v-for="menuPoint in menuPoints" class="lg:p-4 py-2 block text-xl hover:font-extrabold">
                         <NuxtLink :to="menuPoint.to">{{ menuPoint.name }}</NuxtLink>
                     </li>
                     
@@ -42,7 +42,7 @@ onMounted(() => {
 const menuPoints = [
     { name: 'Menüpont', to: '/' },
     { name: 'Blog', to: '/article' },
-    { name: 'Menüpont', to: '/a' },
-    { name: 'Menüpont', to: '/b' },
+    { name: 'Menüpont', to: '/article/1' },
+    { name: 'Menüpont', to: '/article/2' },
 ];
 </script>

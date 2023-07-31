@@ -8,4 +8,10 @@
 
 <script setup>
 
+onMounted(async () => {
+  if(!window.articleToken) {
+    
+  }
+})
+
 </script>
