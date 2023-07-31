@@ -1,14 +1,17 @@
 <template>
-    <header>
-        <nav>
+    <header class="shadow-md bg-white">
+        <nav class="container mx-auto p-6 flex justify-between">
             <NuxtLink to="/">HOME</NuxtLink>
-            <ul>
-                <li><NuxtLink to="/post/1">Post</NuxtLink></li>
+            <ul class="flex gap-7">
+                <li><NuxtLink to="/post/1">Menüpont</NuxtLink></li>
+                <li><NuxtLink to="/post/1">Blog</NuxtLink></li>
+                <li><NuxtLink to="/post/1">Menüpont</NuxtLink></li>
+                <li><NuxtLink to="/post/1">Menüpont</NuxtLink></li>
             </ul>
 
         </nav>
     </header>
-    <div>
+    <div class="container mx-auto p-4">
         <slot />
     </div>
 </template>
