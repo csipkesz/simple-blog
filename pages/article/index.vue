@@ -10,7 +10,7 @@
                     <div class="absolute text-xs text-white bg-red-500 rounded-xl p-2 top-5 right-5"> <nuxt-icon name="timer"/>3 perc</div>
 
                     <div class="pt-2 pb-5">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight">This is the hír, Johny is Here</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight">This is the hír, Johny Gold is here</h5>
                     </div>
                 </div>
             </div>
