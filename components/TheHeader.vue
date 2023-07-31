@@ -5,20 +5,20 @@
                 <NuxtLink to="/"><img class="max-w-sm content-center p-3" src="~/assets/images/p_logo.png"></NuxtLink> 
             </div>
         
-            <button id="menu-button" class="text-3xl cursor-pointer md:hidden block">
+            <button id="menu-button" class="text-3xl cursor-pointer lg:hidden block">
                 <nuxt-icon name="menu"/>
             </button>
         
-            <div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
+            <div class="hidden w-full lg:flex lg:items-center lg:w-auto" id="menu">
                 <ul
                     class="
                     pt-4
                     text-base text-gray-700
-                    md:flex
-                    md:justify-between 
-                    md:pt-0"
+                    lg:flex
+                    lg:justify-between 
+                    lg:pt-0"
                 >
-                    <li v-for="menuPoint in menuPoints" class="md:p-4 py-2 block text-xl hover:font-bold">
+                    <li v-for="menuPoint in menuPoints" class="lg:p-4 py-2 block text-xl hover:font-bold">
                         <NuxtLink :to="menuPoint.to">{{ menuPoint.name }}</NuxtLink>
                     </li>
                     

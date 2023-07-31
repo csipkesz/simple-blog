@@ -5,7 +5,7 @@
             <div class="absolute text-xs text-white bg-red-500 rounded-xl p-2 top-5 right-5"> <nuxt-icon name="timer"/>{{ article.readTime }} perc</div>
 
             <div class="pt-2 pb-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight">{{ article.title }}</h5>
+                <h5 class="mb-2 text-xl font-bold tracking-tight">{{ article.title }}</h5>
             </div>
         </div>
         <!-- https://wallpaperaccess.com/full/138728.jpg -->
