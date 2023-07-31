@@ -1,6 +1,6 @@
 <template>
-    <TheHeader title="NagyMenüpont"/>
-    <div class="container px-16 p-4">
+    <TheHeader />
+    <div class="container mx-auto px-16 p-4">
         <slot />
     </div>
 </template>

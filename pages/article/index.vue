@@ -4,21 +4,25 @@
 
 
         <div class="container flex flex-wrap">
-            <div class="h-full p-4 lg:w-1/4">
-                <div class="max-w-sm relative">
-                    <img class="rounded-xl" src="https://wallpaperaccess.com/full/138728.jpg" alt="" />
-                    <div class="absolute text-xs text-white bg-red-500 rounded-xl p-2 top-5 right-5"> <nuxt-icon name="timer"/>3 perc</div>
-
-                    <div class="pt-2 pb-5">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight">This is the hír, Johny Gold is here</h5>
-                    </div>
-                </div>
-            </div>
+            <ArticleCard v-for="article in articles" :article="article"/>
         </div>
     </div>
 </template>
 
 <script setup>
+import ArticleCard from '../../components/ArticleCard.vue';
+
+const articles = [
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 5, title: 'This is the hír, Johny Gold is here'},
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 6, title: 'This is the hír, Johny Gold is here'},
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 7, title: 'This is the hír, Johny Gold is here'},
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 8, title: 'This is the hír, Johny Gold is here'},
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 9, title: 'This is the hír, Johny Gold is here'},
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 10, title: 'This is the hír, Johny Gold is here'},
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 11, title: 'This is the hír, Johny Gold is here'},
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 12, title: 'This is the hír, Johny Gold is here'},
+{image: 'https://wallpaperaccess.com/full/138728.jpg', readTime: 13, title: 'This is the hír, Johny Gold is here'},
+]
 </script>
 
 <style>

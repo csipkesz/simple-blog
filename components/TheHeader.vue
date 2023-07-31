@@ -1,6 +1,6 @@
 <template>
     <header class="shadow-md bg-white">
-        <nav class="flex flex-wrap items-center justify-between py-4 md:py-0 px-16 text-lg text-gray-700 bg-white">
+        <nav class="container flex flex-wrap justify-between mx-auto py-4 md:py-0 px-16 text-lg items-center">
             <div>
                 <NuxtLink to="/"><img class="max-w-sm content-center p-3" src="~/assets/images/p_logo.png"></NuxtLink> 
             </div>
