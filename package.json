@@ -13,6 +13,7 @@
     "@nuxtjs/google-fonts": "^3.0.2",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.17.1",
+    "@types/sanitize-html": "^2.9.0",
     "autoprefixer": "^10.4.14",
     "nuxt": "^3.6.5",
     "postcss": "^8.4.27",
@@ -20,6 +21,9 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.3.0",
-    "nuxt-icons": "^3.2.1"
+    "lottie-web": "^5.12.2",
+    "nuxt-icons": "^3.2.1",
+    "sanitize-html": "^2.11.0",
+    "vue3-lottie": "^3.0.0"
   }
 }

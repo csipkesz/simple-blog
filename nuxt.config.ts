@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     'nuxt-icons'
   ],
 
+  plugins: [{ src: '~/plugins/lottie', mode: 'client' }],
+
   googleFonts: {
     prefetch: true,
     download: true,

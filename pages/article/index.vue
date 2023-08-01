@@ -2,12 +2,12 @@
     <section v-if="isError">
         <ErrorWithReload />
     </section>
-    <section v-else>
+    <section class="p4" v-else>
         <div class="row pt-16 pb-8 pl-4 font-bold text-5xl">Legfrisebb cikkeink</div>
 
         <div class="container flex flex-wrap">
             <ArticleCard v-if="articles?.length > 0" v-for="article in articles" :article="article"/>  
-            <span class="text-center text-5xl pt-8 font-bold mx-auto" v-else>Loading...</span>
+            <div v-else id="loading" class="w-1/2 mx-auto pt-8" />
         </div>
     </section>
 </template>
@@ -15,6 +15,7 @@
 <script setup>
 import ArticleCard from '~/components/ArticleCard.vue';
 import ErrorWithReload from '~/components/ErrorWithReload.vue';
+import loading from '~/assets/animations/loading.json'
 import { ref } from 'vue';
 
 let isError = ref(false);
@@ -24,6 +25,14 @@ const pageSize = 10;
 let maxPageCount = 0;
 
 onMounted(() => {
+    const nuxtApp = useNuxtApp();
+    nuxtApp.$lottie.loadAnimation({
+        container:  document.getElementById('loading'), // the dom element that will contain the animation
+        loop: true,
+        autoplay: true,
+        animationData: loading
+    });
+
     const fetchArticles = () => {
         $fetch(`https://trial.peakbit.tech/api/articles/list?page=${articlePage}&pageSize=${pageSize}`, {
             method: 'GET',
