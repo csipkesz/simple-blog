@@ -2,7 +2,7 @@
     <section v-if="isError">
         <ErrorWithReload />
     </section>
-    <section class="p4" v-else>
+    <section class="p4 scroll-smooth" v-else>
         <div class="row pt-16 pb-8 pl-4 font-bold text-5xl">Legfrisebb cikkeink</div>
 
         <div class="container flex flex-wrap">

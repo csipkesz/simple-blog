@@ -1,5 +1,5 @@
 <template>
-    <header class="shadow-md bg-white">
+    <header class="shadow-md bg-white sticky top-0 z-50">
         <nav class="container flex flex-wrap justify-between mx-auto py-4 md:py-0 px-16 text-lg items-center">
             <div>
                 <NuxtLink to="/"><img class="max-w-sm content-center p-3" src="~/assets/images/p_logo.png"></NuxtLink> 

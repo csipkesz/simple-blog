@@ -6,12 +6,3 @@
   </div>
 </template>
 
-<script setup>
-
-onMounted(async () => {
-  if(!window.articleToken) {
-    
-  }
-})
-
-</script>
