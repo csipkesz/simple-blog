@@ -58,7 +58,6 @@ onMounted(() => {
     window.onscroll = async () => {
         let bottomOfWindow = Math.max(window.scrollY, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
         if (bottomOfWindow && articlePage <= maxPageCount) {
-            console.log({articlePage, maxPageCount})
             fetchArticles();
         }
     }
