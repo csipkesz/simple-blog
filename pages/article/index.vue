@@ -6,8 +6,10 @@
         <div class="row pt-16 pb-8 pl-4 font-bold text-5xl">Legfrisebb cikkeink</div>
 
         <div class="container flex flex-wrap">
-            <ArticleCard v-if="articles?.length > 0" v-for="article in articles" :article="article"/>  
-            <div v-else id="loading" class="w-1/2 mx-auto pt-8" />
+            <TransitionGroup  name="article-list">
+                <ArticleCard v-for="article in articles" :article="article" :key="article.id"/>  
+            </TransitionGroup >
+            <div v-if="articles?.length < 1" id="loading" class="w-1/2 mx-auto pt-8" />
         </div>
     </section>
 </template>
@@ -69,5 +71,15 @@ onMounted(() => {
 <style>
 .nuxt-icon svg{
   display: inline-flex;
+}
+
+.article-list-enter-active,
+.article-list-leave-active {
+  transition: all 1s ease;
+}
+.article-list-enter-from,
+.article-list-leave-to {
+  opacity: 0;
+  transform: translateY(50px);
 }
 </style>
