@@ -2,7 +2,7 @@
     <section v-if="isError">
         <ErrorWithReload />
     </section>
-    <section class="p4 scroll-smooth" v-else>
+    <section class="p4 scroll-smooth" v-else >
         <div class="row pt-16 pb-8 pl-4 font-bold text-5xl">Legfrisebb cikkeink</div>
 
         <div class="container flex flex-wrap">
@@ -35,6 +35,10 @@ onMounted(() => {
         animationData: loading
     });
 
+    const windowHasScrollbar = () => {
+        return document.body.scrollHeight > window.innerHeight;
+    }
+
     const fetchArticles = () => {
         $fetch(`https://trial.peakbit.tech/api/articles/list?page=${articlePage}&pageSize=${pageSize}`, {
             method: 'GET',
@@ -48,6 +52,10 @@ onMounted(() => {
                     articles.value.push(...response._data.list);
                     articlePage++;
                     maxPageCount = response._data.meta.pageCount;
+
+                    if(!windowHasScrollbar()) { //if the page is too big and there is no scrollbar we will load more (2k)
+                        onScroll();
+                    }
                 }
             }
         }).catch((e) => {
@@ -57,12 +65,13 @@ onMounted(() => {
 
     fetchArticles();
     
-    window.onscroll = async () => {
+    const onScroll = () => {
         let bottomOfWindow = Math.max(window.scrollY, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
-        if (bottomOfWindow && articlePage <= maxPageCount) {
+        if ((bottomOfWindow || !windowHasScrollbar()) && articlePage <= maxPageCount) {
             fetchArticles();
         }
     }
+    window.onscroll = () => { onScroll(); }
 })
 
 
